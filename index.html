@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    background:#060a1f;
+    overflow: hidden;
+}
+#time h1{
+    position: relative;
+    display: block;
+    color: #fff;
+    text-align:center;
+    margin:20px 0px;
+    font-weight:1400;
+    text-transform: uppercase;
+    letter-spacing: .8em;
+    font-size:2em;
+}
+#time #clock{
+    display: flex;
+}
+#time #clock div{
+    position: relative;
+    margin: 0px 1%;
+    -webkit-box-reflect: below 2px linear-gradient(transparent,#0004);
+}
+#time #clock div span{
+    position: relative;
+    display: block;
+    width:200px;
+    height:160px;
+    background-color:#2196f3;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6em;
+    z-index:20;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,.2);
+}
+#time #clock div span:nth-child(2){
+    height: 60px;
+    font-size:1em;
+    letter-spacing: .4em;
+    font-weight:1000;
+    z-index:9;
+    box-shadow: none;
+    background: #127fd6;
+    text-transform: uppercase;
+}
+#time #clock div:last-child span{
+    background: #ff006a;
+}
+#time #clock div:last-child span:nth-child(2){
+    background: #ec0062;
+}
+@media only screen and (max-width: 540px) {
+    #time h1{
+    top:0px;
+    margin:10px 0px;
+    font-weight:700;
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    font-size:1em;
+}
+#time #clock div span{
+    width:100px;
+    height:80px;
+    font-size: 3em;
+}
+#time #clock div span:nth-child(2){
+    height: 30px;
+    font-size:.5em;
+    letter-spacing: .2em;
+}
+}
+@media only screen and (min-height: 896px) {
+    #time h1{
+    top:250px;
+    }
+}
+@media only screen and (min-height: 844px) {
+    #time h1{
+    top:-280px;
+}
+}
+@media only screen and (min-height: 1180px) {
+    #time h1{
+    top:0px;
+}
+}
+@media only screen and (min-height:1024px) {
+    #time h1{
+    top:0px;
+}
+}
+
+
+
+</style>
+</head>
+<body>
+    
+<div id="time">
+    <h1>THE TIME IS NOW</h1>
+    <div id="clock">
+        <div><span id="hour">00</span><span>Hours</span></div>
+        <div><span id="minu">00</span><span>Minutes</span></div>
+        <div><span id="seco">00</span><span>Seconds</span></div>
+    </div>
+</div>
+<script>
+
+setInterval(clock,1000);
+
+function clock(){
+    var a = new Date();
+
+    var h = a.getHours();
+    var m = a.getMinutes();
+    var s = a.getSeconds();
+
+    document.getElementById("hour").innerHTML=h;
+    document.getElementById("minu").innerHTML=m;
+    document.getElementById("seco").innerHTML=s;
+}
+
+</script>
+</body>
+</html>
